@@ -1,0 +1,10 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{background:radial-gradient(900px 500px at 80% -10%,#2a1b6b55,transparent),#070b1f;color:#e8ecff;min-height:100vh;line-height:1.55;-webkit-text-size-adjust:100%}
+input,textarea,select{@apply w-full rounded-xl border border-line bg-[#091029] px-3 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand}
+input:disabled,textarea:disabled{opacity:.6;cursor:not-allowed}
+h1{letter-spacing:-.01em}
+/* visible keyboard focus on buttons, links and the upload drop zones */
+button:focus-visible,a:focus-visible,[role="button"]:focus-visible{outline:2px solid #8b5cf6;outline-offset:2px}
+/* comfortable touch targets on phones */
+@media (max-width:640px){button{min-height:44px}input,textarea,select{font-size:16px}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

@@ -1,0 +1,15 @@
+# Versions below are the ones the test-suite was run against (Python 3.12).
+# Python 3.11 or 3.12 is REQUIRED: rapidocr-onnxruntime declares Requires-Python <3.13, and Render defaults to 3.13+ if you do not pin it.
+fastapi==0.162.2
+uvicorn==0.54.0
+pydantic==2.14.3
+httpx==0.28.1
+firebase-admin==7.7.0
+python-dotenv==1.2.4
+python-multipart==0.0.33
+pillow==13.0.0
+numpy==2.5.4
+# opencv-python must stay < 5: OpenCV 5 removed AKAZE (logo matching falls back to ORB, which is less robust).
+opencv-python>=4.8,<5
+onnxruntime==1.31.1
+rapidocr-onnxruntime==1.4.4
