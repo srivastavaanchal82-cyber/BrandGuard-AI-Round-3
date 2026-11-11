@@ -98,7 +98,7 @@ def gemini_vision(data: bytes, mime: str, brand: dict, ocr_text: str):
               f"Brand: {brand.get('brand_name') or 'unknown'} | Tone: {brand.get('tone')}\nGuidelines: {brand.get('communication_guidelines') or ''}\n"
               f"Approved domains: {brand.get('approved_domains') or ''}\nOCR text from the image: {ocr_text or '(none)'}")
     try:
-        r = httpx.post(f"https://generativelanguage.googleapis.com/v1beta/models/{os.getenv('GEMINI_MODEL', 'gemini-2.0-flash')}:generateContent",
+        r = httpx.post(f"https://generativelanguage.googleapis.com/v1beta/models/{os.getenv('GEMINI_MODEL', 'gemini-3.5-flash-lite')}:generateContent",
                        headers={"x-goog-api-key": key}, timeout=60,
                        json={"contents": [{"parts": [{"inline_data": {"mime_type": mime, "data": base64.b64encode(data).decode()}}, {"text": prompt}]}],
                              "generationConfig": {"responseMimeType": "application/json"}})
